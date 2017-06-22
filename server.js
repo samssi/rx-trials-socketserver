@@ -15,7 +15,7 @@ const lineReader = readline.createInterface({
 app.listen(8001);
 keypress(process.stdin);
 
-io.on("connection", function (socket) {
+io.on("connection", (socket) => {
     console.log("New connection opened...");
     socket.emit("message", { message: "Message from server!" });
     lineReader.on("line", (line) => {
